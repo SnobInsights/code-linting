@@ -1,0 +1,11 @@
+# we are defining variables here to enable and disabled the pipeline
+
+variables:
+  APP_CODE_QUALITY_JOB: "false" # you can also define string like "false" or "true", 1 means enabled and 0 means disabled
+
+stages:
+  - test
+
+include:
+  - local: /test/code-quality-gitlab-ci.yml # this include the local file the defined in this directory
+  # Now you can defined your custom config file to override the default gitLab code climate file configurations
